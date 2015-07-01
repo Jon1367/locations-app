@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<title>Desteny Character Explore</title>
+	<link rel="stylesheet" href="/foundation.css" type="text/css">
+</head>
+<body>
+
+<div class="sticky">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="http://localhost:8080/" class="purp">Destiny Character Explorer</a></h1>
+            </li>
+        </ul>
+
+        <nav>
+            <section class="top-bar-section">
+                <ul class="right ">
+                    <li><a class="purp" href="/login">Login</a>
+                    </li>
+                    <li><a class="purp" href="/auth/facebook">FaceBook Login</a>
+                    </li>
+                    <li><a class="purp" href="/addUser">Register</a>
+                    </li>
+
+                </ul>
+            </section>
+        </nav>
+    </nav>
+</div>
+	
+<div class="row">
+    <div class="small-9 small-centered columns">
+       <h2 class="grayOut">Register</h2>
+        <form action="/processAdd" method="POST">
+            <label>Name</label>
+            <input type="text" name="name">
+            <label>Password</label>
+            <input type="password" name="password">
+            <label>Gamertag</label>
+            <input type="text" name="gamertag">
+            
+            
+            
+            <label for="system">Choose Platform</label>
+            <select name="system">
+                <option value="2">PS4</option>
+                <option value="1">XboxOne</option>
+            </select>
+
+
+            <button class="button small radius" id="purple" type="submit">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+    <footer style="position:fixed; bottom: 0px; height: 40px; line-height: 40px;" class="large-12 columns showme text-center site-footer">
+        <div>|&nbsp;&nbsp;  Created &nbsp;&nbsp; by &nbsp;&nbsp; J.O &nbsp;&nbsp; & &nbsp;&nbsp; A.R &nbsp;&nbsp; | </div>
+    </footer>
+
+
+</body>
+</html>
