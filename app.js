@@ -125,18 +125,22 @@ app.get('/error', function(req, res, next) {
 
 app.get('/', function(req,res){
 
+	// api.getNearByLocations(12,232,function(result){
+
+	// 	console.log(result);
+
+	// });
+
+
+
 	res.sendfile(path.join(__dirname + '/views/layout.html'));
 
 });
-app.post('/viewCharacter', function(req, res) {
+app.post('/getLocatin', function(req, res) {
 
 
 
-	api.characterInfo(memberId,characterId,system,function(result){
 
-
-
-	});
 
 
 

@@ -9,7 +9,7 @@ exports.apiOne = function(system,gamerTag,callback){
 
 	var system;
 
-	unirest.get('http://www.bungie.net/Platform/Destiny/SearchDestinyPlayer/'+system+'/'+gamerTag)
+	unirest.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=AIzaSyC0iY_V_7CCDAZdbKYso2yRjjR3yJ5QYFM')
     .type('json')
     .end(function (response) {
         
@@ -63,7 +63,7 @@ exports.friend = function(system,gamerTag,callback){
 
   var system;
 
-  unirest.get('http://www.bungie.net/Platform/Destiny/SearchDestinyPlayer/'+system+'/'+gamerTag)
+  unirest.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=AIzaSyC0iY_V_7CCDAZdbKYso2yRjjR3yJ5QYFM')
     .type('json')
     .end(function (response) {
         
@@ -115,11 +115,11 @@ exports.friend = function(system,gamerTag,callback){
 };
 
 
-exports.characterInfo = function(membershipId,characterId,system,callback){
+exports.getNearByLocations = function(lat,lon,callback){
 
 
     // http://www.bungie.net/Platform/Destiny/2/Account/4611686018428490430/Character/2305843009286077889/?definitions=true
-    unirest.get('http://www.bungie.net/Platform/Destiny/'+system+'/Account/'+membershipId+'/Character/'+characterId+'/Inventory/?definitions=true')
+    unirest.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=AIzaSyC0iY_V_7CCDAZdbKYso2yRjjR3yJ5QYFM')
     .end(function (res) {
         
         var temp = res.body;
