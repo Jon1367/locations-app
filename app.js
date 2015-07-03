@@ -43,6 +43,8 @@ var fgamerTag = '';
 var fcharacterOne = [];
 var fcharacterTwo = [];
 var fcharacterThree = [];
+
+var places;
 /*
  	Face Book:
  	AppId: 804379889616035
@@ -136,20 +138,35 @@ app.get('/', function(req,res){
 	res.sendfile(path.join(__dirname + '/views/layout.html'));
 
 });
-app.post('/getLocatin', function(req, res) {
+app.get('/getLocation/:lat/:lon', function(req, res) {
 
 
 
+	var lat = req.param("lat");
+	var lon = req.param("lon");
 
 
+	console.log('Lat and Lon')
+	console.log(lat);
+	console.log(lon);
 
+	api.getNearByLocations(lat,lon,function(result){
+
+		places = result;
+		console.log(places['results'][0]['name']);
+
+			//res.render('./views/places',{ data:places });
+        res.redirect('/places');
+
+	});
 
 
 
 });
 
-app.get('/friend', function(req, res) {
+app.get('/places', function(req, res) {
 
+	res.render('./views/places',{ data:places });
 
 });
 

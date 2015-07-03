@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Destiny Character Explorer</title>
 	<link rel="stylesheet" href="/foundation.css" type="text/css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script rel="stylesheet" href="/js/foundation.tooltip.js" type="text/css"></script>
 </head>
 <body>
 <div class="fixed">
@@ -75,18 +77,28 @@
     var x = document.getElementById("demo");
 
 
-
-function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
-}
+
 
 function showPosition(position) {
+
+$.ajax({
+ url: '/getLocation/'+position.coords.latitude+"/"+position.coords.longitude,
+ method: 'GET',
+ success: function(data){
+  
+ }
+});
+
+
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;  
+
+
 }
 </script>
 

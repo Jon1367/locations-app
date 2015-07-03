@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Places</title>
+</head>
+<body>
+  
+
+<% for(var i = 0;i < data['results'].length;i++){ %>
+
+  <p><%= data['results'][i]['name'] %></p>
+  <p><%= data['results'][i]['rating'] %></p>
+  <p><%= data['results'][i]['price_level'] %></p>
+
+
+
+
+<%}%>
+</body>
+</html>
